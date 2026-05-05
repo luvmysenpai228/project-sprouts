@@ -1,2 +1,2 @@
 # project-sprouts
-detection of pine needle shoots using classical computer vision algorithms
+detection of pine sprouts using classical computer vision algorithms
