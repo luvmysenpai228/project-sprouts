@@ -1,0 +1,4 @@
+/backend/src/media/
+/backend/src/ml/weights/*
+/ci/.env
+/.idea/

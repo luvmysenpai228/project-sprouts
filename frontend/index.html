@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nomalize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>GreenCounter</title>
+</head>
+<body>
+<div id="imageViewer" class="modal-overlay hidden">
+    <div class="modal">
+        <div id="closeViewer" style="position:absolute; top:10px; right:15px; cursor:pointer;">✖</div>
+        <img id="viewerImg" style="max-width:100%; border-radius:10px;">
+    </div>
+</div>
+<header class="header">
+    <div class="header__left">
+        <div class="logo">GreenCounter</div>
+        <nav class="nav">
+            <button id="homeBtn" class="nav__btn nav__btn--active">Главная</button>
+            <button id="settingsBtn" class="nav__btn">Настройки</button>
+            <button id="loginBtn" class="nav__btn">Вход</button>
+        </nav>
+    </div>
+
+    <div class="header__right">
+        <div class="status">
+            Состояние системы: <span class="status__active">в работе</span>
+        </div>
+        <div class="sync">
+            Время последней синхронизации: 17.03.2026 18:00
+        </div>
+    </div>
+</header>
+<main id="mainContent" class="container">
+
+    <!-- Статистика -->
+    <section class="card stats">
+        <h2 class="card__title">Статистика по росткам</h2>
+        <p>Всего ростков: 7173</p>
+        <p>Новых ростков за сегодня: 7173</p>
+    </section>
+
+    <!-- Последние изображения -->
+    <section class="card images">
+        <div class="card__header">
+            <h2 class="card__title">Последние изображения</h2>
+            <a href="#" class="link">добавить</a>
+        </div>
+
+        <div class="image-list"></div>
+    </section>
+
+    <!-- Отчет -->
+    <section class="card report">
+        <h2 class="card__title">Отчет</h2>
+        <p>Формат: <span class="badge">PDF</span></p>
+        <button class="btn">Скачать</button>
+    </section>
+
+    <!-- График -->
+    <section class="card chart">
+        <h2 class="card__title">Период: 23.03.2026 - 29.03.2026</h2>
+        <div class="chart-placeholder">
+            <!-- сюда потом вставим chart.js -->
+        </div>
+    </section>
+
+
+</main>
+
+    <section id="settingsPage" class="settings hidden">
+
+        <div class="settings__card">
+            <div class="settings__row">
+                <span>Время получения изображения:</span>
+                <span class="badge">12:00</span>
+            </div>
+
+            <div class="settings__row">
+                <span>Частота загрузки изображений:</span>
+                <span class="badge">раз в час</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- OVERLAY -->
+<div id="modalOverlay" class="modal-overlay hidden">
+
+    <div class="modal">
+
+        <h2>Загрузка изображений</h2>
+        <p class="modal__text">
+            допустимые форматы: pdf, png, jpg, rar, zip
+        </p>
+
+        <div class="modal__drop">
+            переместите файлы сюда<br>
+            или выберите на устройстве
+        </div>
+
+        <button class="modal__btn">Выбрать на устройстве</button>
+
+        <!-- ВОТ ЗДЕСЬ -->
+        <input type="file" id="fileInput" hidden>
+
+    </div>
+
+</div>
+
+<section id="loginPage" class="login hidden">
+
+    <div class="login__card">
+        <div class="login__close" id="closeLogin">✖</div>
+
+        <h2>Вход в систему</h2>
+        <p class="login__subtitle">Введите данные для входа в аккаунт</p>
+
+        <label>Электронная почта</label>
+        <input type="email" placeholder="Введите email">
+
+        <label>Пароль</label>
+        <input type="password" placeholder="Введите пароль">
+
+        <button class="btn">Войти</button>
+    </div>
+
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
